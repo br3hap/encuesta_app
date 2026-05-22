@@ -1,0 +1,20 @@
+.o_geo_zone_map_widget {
+    margin: 10px 0;
+    min-height: 500px;
+    width: 100% !important;
+}
+
+.o_geo_zone_map {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    height: 500px !important;
+    width: 100% !important;
+    min-width: 600px !important;
+    z-index: 1;
+}
+
+/* Asegurar que Leaflet se vea correctamente */
+.o_geo_zone_map .leaflet-container {
+    height: 100% !important;
+    width: 100% !important;
+}

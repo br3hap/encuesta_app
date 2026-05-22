@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Survey User Input Form View - Add cancel/reactivate buttons -->
+    <record id="view_survey_user_input_form_cancel" model="ir.ui.view">
+        <field name="name">survey.user.input.form.cancel</field>
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Add buttons in the header -->
+            <xpath expr="//header" position="inside">
+                <button name="action_cancel_survey" 
+                        type="object" 
+                        string="Cancel Survey" 
+                        class="btn-warning"
+                        attrs="{'invisible': [('state', 'in', ['done', 'cancelled'])]}"/>
+                <button name="action_un_cancel_survey" 
+                        type="object"
+                        string="Reactivate Survey"
+                        class="btn-success"
+                        attrs="{'invisible': [('state', '!=', 'cancelled')]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

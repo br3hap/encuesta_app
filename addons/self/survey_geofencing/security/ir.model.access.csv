@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_geo_zone_user,access_geo_zone_user,model_geo_zone,base.group_user,1,0,0,0
+access_geo_zone_manager,access_geo_zone_manager,model_geo_zone,base.group_system,1,1,1,1
+access_geo_zone_map_view,access_geo_zone_map_view,model_geo_zone_map_view,base.group_user,1,1,1,1
+access_import_kmz_wizard,access_import_kmz_wizard,model_import_kmz_wizard,base.group_user,1,1,1,1
+access_survey_user_input_geofencing,access_survey_user_input_geofencing,survey.model_survey_user_input,base.group_user,1,1,1,0

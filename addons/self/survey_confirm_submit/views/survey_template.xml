@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Extend survey page fill to include the confirmation modal -->
+    <template id="survey_confirm_submit_inherit" name="Survey Confirm Submit Modal" inherit_id="survey.survey_fill_form">
+        <!-- Insert modal INSIDE the form, at the end -->
+        <xpath expr="//form[@role='form']/div[@class='o_survey_form_content w-100']" position="after">
+            <!-- Bootstrap 5 Modal for confirmation dialog -->
+            <div class="modal fade" id="surveyConfirmModal" tabindex="-1" aria-labelledby="surveyConfirmModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="surveyConfirmModalLabel">
+                                <i class="fa fa-question-circle text-warning me-2"></i>
+                                Confirmar envío
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="mb-0">¿Estás seguro de que deseas enviar la encuesta? Esta acción no se puede deshacer.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" id="surveyConfirmCancel" data-cancel-url="">
+                                <i class="fa fa-times me-1"></i>
+                                Cancelar y Salir
+                            </button>
+                            <button type="button" class="btn btn-primary" id="surveyConfirmAccept">
+                                <i class="fa fa-check me-1"></i>
+                                Enviar Encuesta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

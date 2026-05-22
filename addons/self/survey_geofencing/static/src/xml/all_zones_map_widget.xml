@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="survey_geofencing.AllZonesMapWidget" owl="1">
+        <div class="o_all_zones_map_widget" style="width: 100%; min-width: 800px;">
+            <div t-ref="map" class="o_all_zones_map" style="height: 600px; width: 100%;"></div>
+        </div>
+    </t>
+</templates>

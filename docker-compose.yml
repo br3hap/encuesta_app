@@ -1,0 +1,49 @@
+services:
+  odoo:
+    build: .
+    image: odoo16-survey
+    container_name: odoo16survey
+    depends_on:
+      - db
+    ports:
+      - "8100:8069"
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo
+      - POSTGRES_DB=postgres
+    volumes:
+      - odoo-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    restart: unless-stopped
+
+  db:
+    image: postgres:15
+    container_name: db16Survey
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - "5543:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  # pgadmin:
+  #   image: dpage/pgadmin4:latest
+  #   container_name: pgadmin16Survey
+  #   depends_on:
+  #     - db
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL=admin@gmail.com
+  #     - PGADMIN_DEFAULT_PASSWORD=admin
+  #   ports:
+  #     - "42:80"
+  #   restart: unless-stopped
+
+volumes:
+  odoo-data:
+  db-data:

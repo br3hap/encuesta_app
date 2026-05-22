@@ -1,0 +1,24 @@
+/* 
+ * Survey Confirm Submit - Disable Image Zoom Cursor
+ * Removes the zoom cursor (lupa) from answer images
+ */
+
+/* Remove zoom cursor from survey choice images */
+.o_survey_choice_img img {
+    cursor: pointer !important;  /* Normal pointer instead of zoom cursor */
+}
+
+/* Remove any zoom-related styles */
+.o_survey_choice_img img:hover {
+    cursor: pointer !important;
+}
+
+/* Ensure the label is clickable */
+.o_survey_form_choice label {
+    cursor: pointer;
+}
+
+/* Make sure the entire image container is clickable */
+.o_survey_choice_img {
+    cursor: pointer;
+}

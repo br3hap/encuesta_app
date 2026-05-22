@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Zona Centro de Iquitos -->
+        <record id="geo_zone_iquitos_centro" model="geo.zone">
+            <field name="name">Centro de Iquitos</field>
+            <field name="active">True</field>
+            <field name="geojson_data">{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Centro de Iquitos"},"geometry":{"type":"Polygon","coordinates":[[[-73.2550,-3.7450],[-73.2450,-3.7450],[-73.2450,-3.7550],[-73.2550,-3.7550],[-73.2550,-3.7450]]]}}]}</field>
+        </record>
+
+        <!-- Zona Belén -->
+        <record id="geo_zone_belen" model="geo.zone">
+            <field name="name">Belén</field>
+            <field name="active">True</field>
+            <field name="geojson_data">{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Belén"},"geometry":{"type":"Polygon","coordinates":[[[-73.2650,-3.7600],[-73.2500,-3.7600],[-73.2500,-3.7700],[-73.2650,-3.7700],[-73.2650,-3.7600]]]}}]}</field>
+        </record>
+
+        <!-- Zona Punchana -->
+        <record id="geo_zone_punchana" model="geo.zone">
+            <field name="name">Punchana</field>
+            <field name="active">True</field>
+            <field name="geojson_data">{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Punchana"},"geometry":{"type":"Polygon","coordinates":[[[-73.2400,-3.7300],[-73.2200,-3.7300],[-73.2200,-3.7500],[-73.2400,-3.7500],[-73.2400,-3.7300]]]}}]}</field>
+        </record>
+
+        <!-- Zona San Juan Bautista -->
+        <record id="geo_zone_san_juan" model="geo.zone">
+            <field name="name">San Juan Bautista</field>
+            <field name="active">True</field>
+            <field name="geojson_data">{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"San Juan Bautista"},"geometry":{"type":"Polygon","coordinates":[[[-73.2700,-3.7400],[-73.2550,-3.7400],[-73.2550,-3.7600],[-73.2700,-3.7600],[-73.2700,-3.7400]]]}}]}</field>
+        </record>
+    </data>
+</odoo>

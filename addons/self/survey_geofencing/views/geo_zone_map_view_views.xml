@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_geo_zone_map_view_form" model="ir.ui.view">
+        <field name="name">geo.zone.map.view.form</field>
+        <field name="model">geo.zone.map.view</field>
+        <field name="arch" type="xml">
+            <form string="Mapa General de Zonas">
+                <sheet>
+                    <group>
+                        <field name="map_view" widget="all_zones_map" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_geo_zone_map_view" model="ir.actions.act_window">
+        <field name="name">Mapa General</field>
+        <field name="res_model">geo.zone.map.view</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+        <field name="context">{'form_view_initial_mode': 'readonly', 'create': False}</field>
+    </record>
+
+    <menuitem id="menu_geo_zone_map_view"
+              name="Mapa General"
+              parent="menu_geo_zone_root"
+              action="action_geo_zone_map_view"
+              sequence="5"/>
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View Inherit -->
+    <record id="view_survey_user_input_form_inherit" model="ir.ui.view">
+        <field name="name">survey.user_input.form.inherit</field>
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group" position="after">
+                <group string="Geolocalización" col="2">
+                    <group>
+                        <field name="latitude"/>
+                        <field name="longitude"/>
+                    </group>
+                    <group>
+                        <field name="geo_zone_id"/>
+                        <field name="location_verified"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Tree View Inherit -->
+    <record id="view_survey_user_input_tree_inherit" model="ir.ui.view">
+        <field name="name">survey.user_input.tree.inherit</field>
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="geo_zone_id" optional="show"/>
+                <field name="location_verified" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
