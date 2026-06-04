@@ -23,7 +23,7 @@ class SurveyUserInput(models.Model):
                 _logger.info(f"[Geofencing] Procesando coordenadas - Lat: {lat}, Lon: {lon}")
                 
                 if lat and lon:
-                    zone = self._find_zone(lat, lon)
+                    zone = record._find_zone(lat, lon)
                     if zone:
                         vals['geo_zone_id'] = zone.id
                         vals['location_verified'] = True
@@ -35,7 +35,8 @@ class SurveyUserInput(models.Model):
     
     def _find_zone(self, lat, lon):
         """Encuentra la zona que contiene el punto"""
-        zones = self.env['geo.zone'].search([('active', '=', True)])
+        company_id = self.survey_id.company_id.id if self.survey_id and self.survey_id.company_id else self.env.company.id
+        zones = self.env['geo.zone'].search([('active', '=', True), ('company_id', '=', company_id)])
         for zone in zones:
             if zone.point_in_zone(lat, lon):
                 return zone
