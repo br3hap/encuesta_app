@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Survey Geofencing',
-    'version': '16.0.1.0.0',
+    'version': '16.0.2.0.0',
     'category': 'Marketing/Surveys',
     'summary': 'Zonificación geográfica para encuestas',
     'description': """

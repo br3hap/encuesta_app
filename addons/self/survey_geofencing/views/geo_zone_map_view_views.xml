@@ -7,6 +7,9 @@
             <form string="Mapa General de Zonas">
                 <sheet>
                     <group>
+                        <field name="survey_ids" string="Filtrar por Encuesta" widget="many2many_tags"/>
+                    </group>
+                    <group>
                         <field name="map_view" widget="all_zones_map" nolabel="1"/>
                     </group>
                 </sheet>
@@ -19,7 +22,7 @@
         <field name="res_model">geo.zone.map.view</field>
         <field name="view_mode">form</field>
         <field name="target">current</field>
-        <field name="context">{'form_view_initial_mode': 'readonly', 'create': False}</field>
+        <field name="context">{'create': False}</field>
     </record>
 
     <menuitem id="menu_geo_zone_map_view"

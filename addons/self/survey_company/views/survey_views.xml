@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_survey_form_inherit_company" model="ir.ui.view">
+        <field name="name">survey.survey.form.company</field>
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_survey_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='title']" position="after">
+                <field name="company_id" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_geo_zone_form_inherit_company" model="ir.ui.view">
+        <field name="name">geo.zone.form.company</field>
+        <field name="model">geo.zone</field>
+        <field name="inherit_id" ref="survey_geofencing.view_geo_zone_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="company_id" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_geo_zone_tree_inherit_company" model="ir.ui.view">
+        <field name="name">geo.zone.tree.company</field>
+        <field name="model">geo.zone</field>
+        <field name="inherit_id" ref="survey_geofencing.view_geo_zone_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="company_id" optional="show" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
